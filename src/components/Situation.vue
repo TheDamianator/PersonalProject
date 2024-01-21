@@ -1,45 +1,49 @@
-<script>
-
-</script>
-
 <template>
 
 <div class="navbar">
-    <img class="logonavbar" src="/src/assets/Icon.svg" alt="">
-    <p class="title">Long Distance Project</p>
-</div>
+      <img class="logonavbar" src="/src/assets/Icon.svg" alt="">
+      <p class="title">Long Distance Project</p>
+    </div>
 
-<div class="mainscreen">
-
-    <div class="leftscreen">
-
-        <p class="situationtitle" > Option A: Suggest a Casual Video Call</p>
-        <p class="situationexplanation">Eager to connect with Samantha, you propose a casual video call to get to know each other better. This option aims to initiate a comfortable and virtual introduction.</p>
+    <div class="mainscreen">
+      <div :style="{ backgroundImage: 'url(' + leftImage + ')' }" class="leftscreen">
+        <p class="situationtitle">{{ titleA }}</p>
+        <p class="situationexplanation">{{ explanationA }}</p>
         <button class="optionAbutton">
-            <p class="buttontext">Choose this option</p>
+          <p class="buttontext">Choose this option</p>
         </button>
-
-    </div>
-
-        <div class="middlescreen">
-            <img class="logomiddlescreen" src="/src/assets/Icon.svg" alt="">
-            <p class="situationtitle" > Situation</p>
-             <p class="situationexplanation">DUMMTEXT <br> You find yourself swiping through Tinder, and you come across Samantha's profile. Intrigued by her interests and the witty bio, you decide to swipe right. To your delight, it's a match!</p>
-        </div>
-
-    <div class="rightscreen">
-
-        <p class="situationtitle" > Option A: Suggest a Casual Video Call</p>
-        <p class="situationexplanation">Eager to connect with Samantha, you propose a casual video call to get to know each other better. This option aims to initiate a comfortable and virtual introduction.</p>
+      </div>
+  
+      <div class="middlescreen">
+        <img class="logomiddlescreen" src="/src/assets/icon.svg" alt="Middle Image">
+        <p class="situationtitle">Situation</p>
+        <p class="situationexplanation">{{ middleExplanation }}</p>
+      </div>
+  
+      <div :style="{ backgroundImage: 'url(' + rightImage + ')' }" class="rightscreen">
+        <p class="situationtitle">{{ titleB }}</p>
+        <p class="situationexplanation">{{ explanationB }}</p>
         <button class="optionBbutton">
-            <p class="buttontext">Choose this option</p>
+          <p class="buttontext">Choose this option</p>
         </button>
-
+      </div>
     </div>
-
-</div>
-
-</template>
+  </template>
+  
+  <script>
+  export default {
+    props: {
+      titleA: String,
+      explanationA: String,
+      leftImage: String,
+      logo: String,
+      middleExplanation: String,
+      titleB: String,
+      explanationB: String,
+      rightImage: String,
+    },
+  };
+  </script>
 
 <style>
 
@@ -89,6 +93,12 @@
     padding-right: 50px;
     padding-bottom: 100px;
 }
+
+.situationtitleA{
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
 .optionAbutton{
     width: 170px;
     height: 40px;
@@ -99,7 +109,7 @@
     margin-right: auto;
 }
 
-.buttontext{
+.buttontextA{
     font-weight: 600;
 }
 
@@ -122,9 +132,6 @@
     font-weight: bold;
     font-size: 1.3rem;
 }
-.situationexplanation{
-   
-}
 
 .rightscreen{
     background-color: green;
@@ -138,6 +145,15 @@
     padding-left: 50px;
     padding-right: 50px;
     padding-bottom: 100px;
+}
+
+.situationtitleB{
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.buttontextB{
+    font-weight: 600;
 }
 
 .optionBbutton{
