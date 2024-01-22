@@ -3,7 +3,7 @@
 <div class="navbar">
       <img class="logonavbar" src="/src/assets/Icon.svg" alt="">
       <p class="title">Long Distance Project</p>
-    </div>
+</div>
 
     <div class="mainscreen">
       <div :style="{ backgroundImage: 'url(' + leftImage + ')' }" class="leftscreen">
@@ -36,7 +36,6 @@
       titleA: String,
       explanationA: String,
       leftImage: String,
-      logo: String,
       middleExplanation: String,
       titleB: String,
       explanationB: String,

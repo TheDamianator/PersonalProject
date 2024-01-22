@@ -1,26 +1,25 @@
+<script setup>
+import { ref, computed } from 'vue';
+import Situation1 from './components/Situation1.vue';
+import Startscreen from './components/Startscreen.vue';
+
+
+const routes = {
+  '/': Situation1,
+};
+
+const currentPath = ref(window.location.hash);
+
+window.addEventListener('hashchange', () => {
+  currentPath.value = window.location.hash;
+});
+
+const currentView = computed(() => routes[currentPath.value.slice(1) || '/'] || NotFound);
+</script>
+
 <template>
-    <div>
-      <Situation
-        :titleA="'Option A: Your Title'"
-        :explanationA="'Your Option A Explanation'"
-        :leftImage="'/src/assets/LeftImageA.jpg'"
-        :logo="'/src/assets/YourLogoA.svg'"
-        :middleExplanation="'Your Middle Explanation'"
-        :titleB="'Option B: Your Title'"
-        :explanationB="'Your Option B Explanation'"
-        :rightImage="'/src/assets/RightImageA.jpg'"
-      />
-      
-      <!-- Repeat for other instances of Situation with different content and images -->
-    </div>
-  </template>
-  
-  <script>
-  import Situation from "@/components/Situation.vue";
-  
-  export default {
-    components: {
-      Situation,
-    },
-  };
-  </script>
+  <div>
+    <Startscreen/>
+    <!-- <component :is="currentView" /> -->
+  </div>
+</template>
