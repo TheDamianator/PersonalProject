@@ -16,7 +16,7 @@
   
       <div class="middlescreen">
         <img class="logomiddlescreen" src="/src/assets/icon.svg" alt="Middle Image">
-        <p class="situationtitle">Situation</p>
+        <p class="situationtitleTop">{{ situationTitleTop }}</p>
         <p class="situationexplanation">{{ middleExplanation }}</p>
       </div>
   
@@ -33,6 +33,7 @@
   <script>
   export default {
     props: {
+      situationTitleTop: String,
       titleA: String,
       explanationA: String,
       leftImage: String,
@@ -79,6 +80,11 @@
     align-items: center;
 }
 
+.leftscreen, .rightscreen {
+  background-size: cover; /* This will make sure the background image covers the entire container */
+  background-position: center; /* Center the background image */
+}
+
 .leftscreen{
     background-color: blue;
     width: 40%;
@@ -91,6 +97,7 @@
     padding-left: 50px;
     padding-right: 50px;
     padding-bottom: 100px;
+    color: white;
 }
 
 .situationtitleA{
@@ -131,6 +138,10 @@
     font-weight: bold;
     font-size: 1.3rem;
 }
+.situationtitleTop{
+  font-weight: bold;
+    font-size: 1.3rem;
+}
 
 .rightscreen{
     background-color: green;
@@ -144,6 +155,7 @@
     padding-left: 50px;
     padding-right: 50px;
     padding-bottom: 100px;
+    color: white;
 }
 
 .situationtitleB{
