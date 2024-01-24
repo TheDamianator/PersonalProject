@@ -6,6 +6,7 @@ import MeetAlex from './components/MeetAlex.vue';
 
 <template>
   <div>
-    <router-view></router-view>
+    <router-view> </router-view>
+   
   </div>
 </template>

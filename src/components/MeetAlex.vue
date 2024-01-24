@@ -1,8 +1,8 @@
 <template>
     <div>
       <Situation
+        :linkToNextSituation="'/situation1'"
         :situationTitleTop="'The Story Begins..'"
-
 
         :titleA="'Alex'"
         :explanationA="'Meet Alex, a lively and outgoing individual hailing from the sunny shores of California. With an adventurous spirit and a passion for forging connections, Alex is ready to navigate the challenges and joys of a long-distance relationship.'"
@@ -20,7 +20,8 @@
   
   <script>
   import Situation from "@/components/Situation.vue";
-  
+  import Situation1 from "@/components/Situation1.vue";
+
   export default {
     components: {
       Situation,

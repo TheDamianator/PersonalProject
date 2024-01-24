@@ -9,9 +9,13 @@
       <div :style="{ backgroundImage: 'url(' + leftImage + ')' }" class="leftscreen">
         <p class="situationtitle">{{ titleA }}</p>
         <p class="situationexplanation">{{ explanationA }}</p>
+
+        <router-link :to="{ path: linkToNextSituation }">
         <button class="optionAbutton">
           <p class="buttontext">Choose this option</p>
         </button>
+      </router-link>
+
       </div>
   
       <div class="middlescreen">
@@ -23,21 +27,28 @@
       <div :style="{ backgroundImage: 'url(' + rightImage + ')' }" class="rightscreen">
         <p class="situationtitle">{{ titleB }}</p>
         <p class="situationexplanation">{{ explanationB }}</p>
+
         <button class="optionBbutton">
           <p class="buttontext">Choose this option</p>
         </button>
       </div>
+
     </div>
   </template>
   
   <script>
   export default {
     props: {
-      situationTitleTop: String,
+
+      linkToNextSituation: String, // Add a prop for the link to the next Situation
+
       titleA: String,
       explanationA: String,
       leftImage: String,
+
+      situationTitleTop: String,
       middleExplanation: String,
+
       titleB: String,
       explanationB: String,
       rightImage: String,
