@@ -21,9 +21,14 @@
             Get ready for an engaging and personalized journey that unfolds based on your choices. The adventure is in your hands!
         </p>
 
-        <button class="startButton">
-          <p class="startButtonText">Begin story</p>
-        </button>
+        <router-link to="/meet-alex">
+            <button class="startButton">
+                <p class="startButtonText">Begin story</p>
+            </button>
+        </router-link>
+
+       
+
     </div> 
 </div>
 
